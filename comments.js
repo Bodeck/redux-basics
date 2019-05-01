@@ -12,15 +12,27 @@ export default function comments(state = [], action) {
       return state.filter((comment) => comment.id !== action.id);
     case EDIT_COMMENT:
       return state.map((comment) => {
-        if (comment.id === action.id) Object.assign({}, comment, { text: action.text });
+        if (comment.id === action.id) {
+          return Object.assign({}, comment, { text: action.text });
+        } else {
+          return comment;
+        }
       });
     case THUMB_UP_COMMENT:
       return state.map((comment) => {
-        if (comment.id === action.id) Object.assign({}, comment, { text: comment.vote++ });
+        if (comment.id === action.id) {
+          return Object.assign({}, comment, { text: comment.vote++ });
+        } else {
+          return comment;
+        }
       });
     case THUMB_DOWN_COMMENT:
       return state.map((comment) => {
-        if (comment.id === action.id) Object.assign({}, comment, { text: comment.vote-- });
+        if (comment.id === action.id) {
+          return Object.assign({}, comment, { text: comment.vote-- });
+        } else {
+          return comment;
+        }
       });
     default:
       return state;
