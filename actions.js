@@ -1,8 +1,8 @@
-const ADD_COMMENT = 'ADD_COMMENT';
-const EDIT_COMMENT = 'EDIT_COMMENT';
-const REMOVE_COMMENT ='REMOVE_COMMENT';
-const THUMB_UP_COMMENT = 'THUMB_UP';
-const THUMB_DOWN_COMMENT = 'THUMB_DOWN';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
+export const REMOVE_COMMENT ='REMOVE_COMMENT';
+export const THUMB_UP_COMMENT = 'THUMB_UP';
+export const THUMB_DOWN_COMMENT = 'THUMB_DOWN';
 
 const addComment = (text) => {
   return {
@@ -30,15 +30,13 @@ const removeComment = (commentId) => {
 const thumbUp = (commentId) => {
   return {
     type: THUMB_UP_COMMENT,
-    commentId,
-    rate: 1
+    commentId
   }
 };
 
 const thumbDown = (commentId) => {
   return {
     type: THUMB_DOWN_COMMENT,
-    commentId,
-    rate: -1
+    commentId
   }
 };
